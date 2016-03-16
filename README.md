@@ -18,10 +18,10 @@ cd spammer-bot
 
 ./launch.sh
 
-yadetoon nare ghabl az avalin launch idi khodetoon ro dakhel spammerbot.lua baraye sudo shodan gharar bedid
+yadetoon nare ghabl az avalin launch idi khodetoon ro dakhel seedbot.lua baraye sudo shodan gharar bedid
 
 movafagh va sarboland bashid :)
-# [developer](telegram.me/joker_admin_1)
+# [Danger](telegram.me/joker_admin_1)
 
 hatman ghabl launch plugine (autoaddersudo) ro check konid
 
