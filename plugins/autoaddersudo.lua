@@ -1,4 +1,3 @@
-[Forwarded from Telegram robot]
 do
 local function run(msg, matches)
 local bot_id = our_id 
