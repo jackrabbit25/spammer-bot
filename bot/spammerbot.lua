@@ -229,27 +229,26 @@ function create_config( )
     sudo_users = {110626080,103649648,143723991,111020322,0,tonumber(our_id)},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
-    about_text = [[Teleseed v2 - Open Source
-An advance Administration bot based on yagop/telegram-bot 
+    about_text = [[spammer-bot
+An advance Administration bot based on teleseed 
+spammer bot open sourced to:
+[source spammer bot](https://github.com/3pehrdev/spammer-bot)
 
-https://github.com/SEEDTEAM/TeleSeed
+developed and founded
+By
+[blacklife admin](telegram.me/joker_admin_1)
+my chanell
+[chanell blacklifeTM](telegram.me/blacklifech)
 
-Our team!
-Alphonse (@Iwals)
-I M /-\ N (@Imandaneshi)
-Siyanew (@Siyanew)
-Rondoozle (@Potus)
-Seyedan (@Seyedan25)
+ thanks to:
+mobin
+--
+--
+--
 
-Special thanks to:
-Juan Potato
-Siyanew
-Topkecleon
-Vamptacus
-
-Our channels:
-English: @TeleSeedCH
-Persian: @IranSeed
+special thanks to
+blacklifeTm
+teleseedTm
 ]],
     help_text_realm = [[
 Realm Commands:
