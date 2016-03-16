@@ -1,4 +1,4 @@
-# [Developed by @joker_admin_1](https://telegram.me/@joker_Admin_1)
+# [Developed by joker_admin_1](https://telegram.me/@joker_Admin_1)
 
 [chanell ekhtesasi](https://telegram.me/make_a_robot)
 
@@ -18,7 +18,7 @@ cd spammer-bot
 
 ./launch.sh
 
-yadetoon nare ghabl az avalin launch idi khodetoon ro dakhel seedbot.lua baraye sudo shodan gharar bedid
+yadetoon nare ghabl az avalin launch idi khodetoon ro dakhel spammerbot.lua baraye sudo shodan gharar bedid
 
 movafagh va sarboland bashid :)
 [developer](telegram.me/joker_admin_1)
