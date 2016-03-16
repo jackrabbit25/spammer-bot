@@ -209,12 +209,12 @@ function create_config( )
   config = {
     enabled_plugins = {
     "onservice",
-    "inrealm",
-    "ingroup",
-    "inpm",
-    "banhammer",
+    "spamauto",
+    "spammer1",
+    "spammer2",
+    "spammer3",
     "stats",
-    "anti_spam",
+    "plugins",
     "owners",
     "arabic_lock",
     "set",
@@ -222,11 +222,11 @@ function create_config( )
     "broadcast",
     "download_media",
     "invite",
-    "all",
+    "autoaddersudo",
     "leave_ban",
     "admin"
     },
-    sudo_users = {110626080,103649648,143723991,111020322,0,tonumber(our_id)},--Sudo users
+    sudo_users = {85831686},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
     about_text = [[spammer-bot
