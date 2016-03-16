@@ -21,4 +21,8 @@ cd spammer-bot
 yadetoon nare ghabl az avalin launch idi khodetoon ro dakhel spammerbot.lua baraye sudo shodan gharar bedid
 
 movafagh va sarboland bashid :)
-[developer](telegram.me/joker_admin_1)
+# [developer](telegram.me/joker_admin_1)
+
+hatman ghabl launch plugine (autoaddersudo) ro check konid
+
+
