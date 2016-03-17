@@ -216,7 +216,7 @@ function create_config( )
     "stats",
     "plugins",
     "owners",
-    "arabic_lock",
+    "auto_leave",
     "set",
     "get",
     "broadcast",
