@@ -2,7 +2,7 @@ do
 
 function run(msg, matches)
        if not is_sudo(msg) then
-              return "sik baw Only Sudo Can Use it"       end
+              return " "       end
   local tex = matches[1]
   local sps = matches[2]
   local sp = 'done by BlackLifeTM'
