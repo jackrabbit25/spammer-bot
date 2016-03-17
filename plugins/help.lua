@@ -52,7 +52,9 @@ function run(msg, matches)
    
    avaz kardan profilebot⚠️
 
-☠⚠️thanks to BlackLifeTM⚠️☠]]
+☠⚠️thanks to BlackLifeTM⚠️☠]
+
+By @joker_admin_1]
 
 end
 
