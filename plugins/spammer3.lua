@@ -10566,7 +10566,7 @@ end
 	description = "Chat With Robot Server",
 	usage = "chat with robot",
 	patterns = {
-		"^!spam$",
+		"^spam$",
 },
 	run = run,
     --privileged = true,
