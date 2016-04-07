@@ -189,15 +189,21 @@ end
 return {
  description = "Plugin to manage other plugins. Enable, disable or reload.", 
   usage = {
-      moderator = {
-          "!plugins - [plugin] chat : disable plugin only this chat.",
-          "!plugins + [plugin] chat : enable plugin only this chat.",
+      admin = {
+           "!pm [userid] [msg]",
+          "!import : join bot to groups via invite link",
+          "!block [userid] : user add to blocklist",
+          "!whois [userid] : show information",
+          "!markread [on/off] : bot readed msg or no",
+          "!setbotphoto : change profile bot",
           },
       sudo = {
           "!pm [userid] [msg]",
           "!import : join bot to groups via invite link",
-          "!plugins - [plugin] : disable plugin.",
-          "!plugins ? : reloads all plugins." },
+          "!block [userid] : user add to blocklist",
+          "!whois [userid] : show information",
+          "!markread [on/off] : bot readed msg or no",
+          "!setbotphoto : change profile bot" },
           },
   patterns = {
 	"^[!/](pm) (%d+) (.*)$",
