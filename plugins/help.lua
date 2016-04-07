@@ -4,7 +4,7 @@ do
 function run(msg, matches)
 
   return ' '.. VERSION .. [[🔮help for spammer-bot🔮
-   🔺 (spam) (number) (name)
+   🔺 !(spam) (number) (name)
     
    spam b surat chand taii va feshorde dar 1 payam⚠️
    
