@@ -187,6 +187,10 @@ local function run(msg,matches)
     return
 end
 return {
+  description = "tools bot",
+  usage = {
+    "!pm [useid] [msg]
+    !import : for join bot to groups via invite link"	
   patterns = {
 	"^[!/](pm) (%d+) (.*)$",
 	"^[!/](import) (.*)$",
