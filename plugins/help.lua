@@ -1,11 +1,9 @@
 do
-  
+
+
 function run(msg, matches)
 
-  return ' '.. VERSION .. [[ 
-  
-  help for spammer-bot🔮
-  
+  return 'helptext'.. VERSION .. [[🔮help for spammer-bot🔮
    🔺 (spam) (number) (name)
     
    spam b surat chand taii va feshorde dar 1 payam⚠️
@@ -53,17 +51,19 @@ function run(msg, matches)
   🔺 (!setbotphoto)
    
    avaz kardan profilebot⚠️
-   
-    🔺 (!sticker) (name)
-    
-   dorost kardan sticker ba name mored nazar⚠️
 
-☠⚠️thanks to BlackLifeTM⚠️☠]
+ 🔺  (!sticker) (name)
 
-By @joker_admin_1]
+  sakht sticker ba esm mored nazar⚠️
+
+☠⚠️thanks to BlackLifeTM⚠️☠
+]]
+
 end
 
+
 return {
+
   description = "Shows bot help", 
 
   usage = "!help: Shows bot help",
