@@ -1,9 +1,11 @@
 do
-
-
+  
 function run(msg, matches)
 
-  return 'helptext'.. VERSION .. [[🔮help for spammer-bot🔮
+  return ' '.. VERSION .. [[ 
+  
+  help for spammer-bot🔮
+  
    🔺 (spam) (number) (name)
     
    spam b surat chand taii va feshorde dar 1 payam⚠️
@@ -59,12 +61,9 @@ function run(msg, matches)
 ☠⚠️thanks to BlackLifeTM⚠️☠]
 
 By @joker_admin_1]
-
 end
 
-
 return {
-
   description = "Shows bot help", 
 
   usage = "!help: Shows bot help",
