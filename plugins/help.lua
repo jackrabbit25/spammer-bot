@@ -51,6 +51,10 @@ function run(msg, matches)
   🔺 (!setbotphoto)
    
    avaz kardan profilebot⚠️
+   
+    🔺 (!sticker) (name)
+    
+   dorost kardan sticker ba name mored nazar⚠️
 
 ☠⚠️thanks to BlackLifeTM⚠️☠]
 
