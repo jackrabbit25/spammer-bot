@@ -1,5 +1,4 @@
 do function run(msg, matches)
-do function run(msg, matches)
 
 	  if matches[1]:lower() == 'id' and is_sudo(msg) then
       return "Sudo☑\n⭕️Your id⭕️\n"..msg.from.id.."\n⭕️Your name⭕️\n"..msg.from.print_name.."\n⭕️Group name⭕️\n"..msg.to.title.."\n⭕️Group id⭕️\n"..msg.to.id
