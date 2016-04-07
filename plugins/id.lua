@@ -18,7 +18,7 @@ do function run(msg, matches)
 end
   return {
   description = "show your id",
-  usage = "me",
+  usage = "!id : show your id",
   patterns = {
   "^[!/#]([Ii][Dd])$",
     },
