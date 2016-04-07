@@ -190,14 +190,6 @@ return {
  description = "Plugin to manage other plugins. Enable, disable or reload.", 
   usage = {
       admin = {
-           "!pm [userid] [msg]",
-          "!import [link] : join bot to groups via invite link",
-          "!block [userid] : user add to blocklist",
-          "!whois [userid] : show information",
-          "!markread [on/off] : bot readed msg or no",
-          "!setbotphoto : change profile bot",
-          },
-      sudo = {
           "!pm [userid] [msg]",
           "!import : join bot to groups via invite link",
           "!block [userid] : user add to blocklist",
