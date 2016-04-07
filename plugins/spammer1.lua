@@ -20,6 +20,9 @@ end
 
 return {
     patterns = {
+           usage = {
+                  sudo = {
+                  !spam : send large msg to chat 
       "[!/#]spam (.*) (.*)$"
     },
     run = run,
