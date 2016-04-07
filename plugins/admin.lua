@@ -187,11 +187,18 @@ local function run(msg,matches)
     return
 end
 return {
-  description = "tools bot",
+ description = "Plugin to manage other plugins. Enable, disable or reload.", 
   usage = {
-    "!pm [useid] [msg]",
-    "!import : for join bot to groups via invite link" },
-    },
+      moderator = {
+          "!plugins - [plugin] chat : disable plugin only this chat.",
+          "!plugins + [plugin] chat : enable plugin only this chat.",
+          },
+      sudo = {
+          "!pm [userid] [msg]",
+          "!import : join bot to groups via invite link",
+          "!plugins - [plugin] : disable plugin.",
+          "!plugins ? : reloads all plugins." },
+          },
   patterns = {
 	"^[!/](pm) (%d+) (.*)$",
 	"^[!/](import) (.*)$",
