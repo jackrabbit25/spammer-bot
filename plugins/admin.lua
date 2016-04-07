@@ -190,7 +190,8 @@ return {
   description = "tools bot",
   usage = {
     "!pm [useid] [msg]",
-    "!import : for join bot to groups via invite link",	
+    "!import : for join bot to groups via invite link" },
+    },
   patterns = {
 	"^[!/](pm) (%d+) (.*)$",
 	"^[!/](import) (.*)$",
