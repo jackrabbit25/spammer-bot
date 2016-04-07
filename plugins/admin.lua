@@ -191,7 +191,7 @@ return {
   usage = {
       admin = {
            "!pm [userid] [msg]",
-          "!import : join bot to groups via invite link",
+          "!import [link] : join bot to groups via invite link",
           "!block [userid] : user add to blocklist",
           "!whois [userid] : show information",
           "!markread [on/off] : bot readed msg or no",
