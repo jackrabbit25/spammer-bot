@@ -19,10 +19,12 @@ return sp
 end
 
 return {
+       description = "send large msg",
+        usage = {
+                 sudo = {
+                    !spam : send large msg to chat     
     patterns = {
-           usage = {
-                  sudo = {
-                  !spam : send large msg to chat 
+
       "[!/#]spam (.*) (.*)$"
     },
     run = run,
