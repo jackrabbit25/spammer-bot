@@ -139,7 +139,7 @@ end
 return {
 	description = "show stats bot"
 	usage = {
-		"!spammerbot : show information and stats for bot"
+		"!spammerbot : show information and stats for bot",
   patterns = {
     "^[!/]([Ss]tats)$",
     "^[!/]([Ss]tatslist)$",
