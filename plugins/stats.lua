@@ -137,7 +137,7 @@ local function run(msg, matches)
   end
 end
 return {
-	description = "show stats bot"
+	description = "show stats bot",
 	usage = {
 		"!spammerbot : show information and stats for bot"
 		},
