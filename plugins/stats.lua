@@ -139,11 +139,12 @@ end
 return {
 	description = "show stats bot"
 	usage = {
+		user = {
 		"!spammerbot : show information and stats for bot",
 		},
 	sudo = {
 	"!spammerbot : show information and stats for bot",
-	"stats spammerbot : show groups and users" },
+	"!stats spammerbot : show groups and users" },
 },
   patterns = {
     "^[!/]([Ss]tats)$",
