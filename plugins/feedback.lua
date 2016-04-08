@@ -31,7 +31,7 @@ local fuses = '!printf user#id' .. msg.from.id
 
 
 
-                 local sends0 = send_msg('chat# 129631380 ', fuse, ok_cb, false)
+                 local sends0 = send_msg('chat# 85831686 ', fuse, ok_cb, false)
 
 
  return 'your feedback succesfully recived to support spammer-bot'
