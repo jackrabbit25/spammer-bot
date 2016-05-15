@@ -1,6 +1,6 @@
-# [Developed by joker_admin_1](https://telegram.me/@joker_Admin_1)
+# [Dev by MrBlackLife](https://telegram.me/Mrblacklife)
 
-[chanell ekhtesasi](https://telegram.me/make_a_robot)
+* [chanell ekhtesasi](https://telegram.me/make_a_robot)
 
 baraye nasb shodan git rooye botetoon too terminal mitoonid az code haye zir estefade konid
 
