@@ -216,7 +216,7 @@ function create_config( )
     "leave",
     "inrealm",
     "ingroup",
-    "plugins"
+    "plugins",
     "spammer1",
     "spammer2",
     "stats",
