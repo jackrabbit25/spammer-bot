@@ -97,7 +97,8 @@ local function get_dialog_list_callback(cb_extra, success, result)
       end
       if v.message.action then
         text = text.."\n"..serpent.block(v.message.action, {comment=false})
-      end
+    --;
+			end
       if v.message.from then
         if v.message.from.print_name then
           text = text.."\n From > \n"..string.gsub(v.message.from.print_name, "_"," ").."["..v.message.from.id.."]"
