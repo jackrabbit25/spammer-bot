@@ -212,24 +212,19 @@ function create_config( )
   -- A simple config with basic plugins and ourselves as privileged user
   config = {
     enabled_plugins = {
-	"admin",
-    "onservice",
+	"tools",
+    "leave",
     "inrealm",
     "ingroup",
-    "inpm",
-    "banhammer",
+    "plugins"
+    "spammer1",
+    "spammer2",
     "stats",
-    "anti_spam",
-    "owners",
-    "arabic_lock",
-    "set",
-    "get",
-    "broadcast",
+    "spammer3",
+    "id",
     "invite",
-    "all",
-    "leave_ban",
 	"supergroup",
-	"whitelist",
+	"updater",
 	"msg_checks"
     },
     sudo_users = {110626080,103649648,111020322,0,tonumber(our_id)},--Sudo users
