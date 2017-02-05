@@ -225,7 +225,12 @@ function create_config( )
     "invite",
 	"supergroup",
 	"updater",
-	"msg_checks"
+	"msg_checks",
+	"V",
+    "W",
+    "X",
+	"Y",
+	"Z",
     },
     sudo_users = {255317894},--Sudo users
     moderation = {data = 'data/moderation.json'},
