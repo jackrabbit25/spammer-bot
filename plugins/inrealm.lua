@@ -1,5 +1,3 @@
--- data saved to moderation.json
--- check moderation plugin
 do
 
 local function create_group(msg)
@@ -7,7 +5,7 @@ local function create_group(msg)
     if is_sudo(msg) or is_realm(msg) and is_admin1(msg) then
 		local group_creator = msg.from.print_name
 		create_group_chat (group_creator, group_name, ok_cb, false)
-		return 'Group [ '..string.gsub(group_name, '_', ' ')..' ] has been created.'
+		return '💀Group [ '..string.gsub(group_name, '_', ' ')..' ] CreAteD!.'
 	end
 end
 
@@ -16,7 +14,7 @@ local function create_realm(msg)
 	if is_sudo(msg) or is_realm(msg) and is_admin1(msg) then
 		local group_creator = msg.from.print_name
 		create_group_chat (group_creator, group_name, ok_cb, false)
-		return 'Realm [ '..string.gsub(group_name, '_', ' ')..' ] has been created.'
+		return '💀Realm [ '..string.gsub(group_name, '_', ' ')..' ] CreAteD!.'
 	end
 end
 
@@ -492,12 +490,13 @@ local function admin_promote(msg, admin_id)
 		save_data(_config.moderation.data, data)
 	end
 	if data[tostring(admins)][tostring(admin_id)] then
-		return admin_id..' is already an admin.'
+		return admin_id..' is already an admin.💀'
 	end
 	data[tostring(admins)][tostring(admin_id)] = admin_id
 	save_data(_config.moderation.data, data)
-	return admin_id..' has been promoted as admin.'
+	return admin_id..' PrOMOtED💀'
 end
+
 
 local function admin_demote(msg, admin_id)
     if not is_sudo(msg) then
@@ -514,7 +513,7 @@ local function admin_demote(msg, admin_id)
 	end
 	data[tostring(admins)][tostring(admin_id)] = nil
 	save_data(_config.moderation.data, data)
-	return admin_id..' has been demoted from admin.'
+	return admin_id..'DeMoTeD💀'
 end
 
 local function admin_list(msg)
@@ -602,11 +601,11 @@ local function admin_user_promote(receiver, member_username, member_id)
             save_data(_config.moderation.data, data)
         end
         if data['admins'][tostring(member_id)] then
-            return send_large_msg(receiver, '@'..member_username..' is already an admin.')
+            return send_large_msg(receiver, '💀User @'..member_username..' is already an admin.')
         end
         data['admins'][tostring(member_id)] = member_username
         save_data(_config.moderation.data, data)
-	return send_large_msg(receiver, '@'..member_username..' has been promoted as admin.')
+	return send_large_msg(receiver, '💀User @'..member_username..' NoW is My AdMiN.')
 end
 
 local function admin_user_demote(receiver, member_username, member_id)
@@ -616,12 +615,12 @@ local function admin_user_demote(receiver, member_username, member_id)
         save_data(_config.moderation.data, data)
 	end
 	if not data['admins'][tostring(member_id)] then
-		send_large_msg(receiver, "@"..member_username..' is not an admin.')
+		send_large_msg(receiver, "💀User @"..member_username..' Is Not AdMiN')
 		return
     end
 	data['admins'][tostring(member_id)] = nil
 	save_data(_config.moderation.data, data)
-	send_large_msg(receiver, 'Admin @'..member_username..' has been demoted.')
+	send_large_msg(receiver, '💀Admin @'..member_username..' DeMoTeD By ['..msg.from.id..']')
 end
 
 local function username_id(cb_extra, success, result)
@@ -634,15 +633,36 @@ local function username_id(cb_extra, success, result)
       if vusername == member then
         member_username = member
         member_id = v.peer_id
-        if mod_cmd == 'addadmin' then
+        if mod_cmd == 'promadmin' then
             return admin_user_promote(receiver, member_username, member_id)
-        elseif mod_cmd == 'removeadmin' then
+        elseif mod_cmd == 'deladmin' then
             return admin_user_demote(receiver, member_username, member_id)
         end
       end
    end
    send_large_msg(receiver, text)
 end
+
+local function username_id2(cb_extra, success, result)
+   local mod_cmd = cb_extra.mod_cmd
+   local receiver = cb_extra.receiver
+   local member = cb_extra.member
+   local text = 'No user @'..member..' in this group.'
+   for k,v in pairs(result) do
+      vusername = v.username
+      if vusername == member then
+        member_username = member
+        member_id = v.peer_id
+        if mod_cmd == 'promadmin' then
+            return admin_user_promote(receiver, member_username, member_id)
+        elseif mod_cmd == 'deladmin' then
+            return admin_user_demote(receiver, member_username, member_id)
+        end
+      end
+   end
+   send_large_msg(receiver, text)
+end
+
 
 local function res_user_support(cb_extra, success, result)
    local receiver = cb_extra.receiver
@@ -722,36 +742,33 @@ function run(msg, matches)
 		user_info(user_id, cb_user_info, {receiver = receiver})
 	end
 
-	if not is_sudo(msg) and not is_realm(msg) and is_admin1(msg) then
-		return
+	if not is_admin1(msg) then
+		if is_realm(msg) and is_momod(msg) then
+			print("Admin detected")
+		else
+			return
+		end
  	end
 
     if matches[1] == 'creategroup' and matches[2] then
-	if not is_momod(msg) then 
-		return 
-	end
-	if not is_sudo(msg) or is_admin1(msg) and is_realm(msg) then
-		return "You cant create groups!"
-	end
         group_name = matches[2]
         group_type = 'group'
         return create_group(msg)
     end
 
-	--[[ Experimental
 	if matches[1] == 'createsuper' and matches[2] then
 	if not is_sudo(msg) or is_admin1(msg) and is_realm(msg) then
 		return "You cant create groups!"
 	end
         group_name = matches[2]
-        group_type = 'super_group'
+        group_type = 'Super'
         return create_group(msg)
-    end]]
+    end
 
     if matches[1] == 'createrealm' and matches[2] then
-	if not is_sudo(msg) or not is_admin1(msg) and is_realm(msg) then
-		return  "You cant create groups!"
-	end
+			if not is_sudo(msg) then
+				return "Sudo users only !"
+			end
         group_name = matches[2]
         group_type = 'realm'
         return create_realm(msg)
@@ -949,12 +966,15 @@ function run(msg, matches)
 			end
 			if string.match(matches[2], '^%d+$') then
 				local admin_id = matches[2]
-				print("user "..admin_id.." has been promoted as admin")
 				return admin_promote(msg, admin_id)
 			else
-			  local member = string.gsub(matches[2], "@", "")
+			    local member = string.gsub(matches[2], "@", "")
 				local mod_cmd = "addadmin"
+				if msg.to.type == 'channel' then
+				channel_get_users(receiver, username_id2, {mod_cmd= mod_cmd, receiver=receiver, member=member})
+				else
 				chat_info(receiver, username_id, {mod_cmd= mod_cmd, receiver=receiver, member=member})
+				end
 			end
 		end
 		if matches[1] == 'removeadmin' then
@@ -968,7 +988,11 @@ function run(msg, matches)
 			else
 			local member = string.gsub(matches[2], "@", "")
 				local mod_cmd = "removeadmin"
+				if msg.to.type == 'channel' then
+				channel_get_users(receiver, username_id2, {mod_cmd= mod_cmd, receiver=receiver, member=member})
+				else
 				chat_info(receiver, username_id, {mod_cmd= mod_cmd, receiver=receiver, member=member})
+				end
 			end
 		end
 		if matches[1] == 'support' and matches[2] then
@@ -1047,34 +1071,14 @@ end
 
 return {
   patterns = {
-    "^[#!/](creategroup) (.*)$",
-	"^[#!/](createsuper) (.*)$",
-    "^[#!/](createrealm) (.*)$",
-    "^[#!/](setabout) (%d+) (.*)$",
-    "^[#!/](setrules) (%d+) (.*)$",
-    "^[#!/](setname) (.*)$",
-    "^[#!/](setgpname) (%d+) (.*)$",
-    "^[#!/](setname) (%d+) (.*)$",
-    "^[#!/](lock) (%d+) (.*)$",
-    "^[#!/](unlock) (%d+) (.*)$",
-	"^[#!/](mute) (%d+)$",
-	"^[#!/](unmute) (%d+)$",
-    "^[#!/](settings) (.*) (%d+)$",
-    "^[#!/](wholist)$",
-    "^[#!/](who)$",
-	"^[#!/]([Ww]hois) (.*)",
-    "^[#!/](type)$",
-    "^[#!/](kill) (chat) (%d+)$",
-    "^[#!/](kill) (realm) (%d+)$",
-	"^[#!/](rem) (%d+)$",
-    "^[#!/](addadmin) (.*)$", -- sudoers only
-    "^[#!/](removeadmin) (.*)$", -- sudoers only
-	"[#!/ ](support)$",
-	"^[#!/](support) (.*)$",
-    "^[#!/](-support) (.*)$",
-    "^[#!/](list) (.*)$",
-    "^[#!/](log)$",
-    "^[#!/](help)$",
+    "^[/!#](creategroup) (.*)$",
+	"^[/!#](createsuper) (.*)$",
+    "^[/!#](createrealm) (.*)$",
+    "^[/!#](setname) (.*)$",
+    "^[/!#](type)$",
+    "^[/!#](promadmin) (.*)$", -- sudoers only
+    "^[/!#](deladmin) (.*)$", -- sudoers only
+
     "^!!tgservice (.+)$",
   },
   run = run
