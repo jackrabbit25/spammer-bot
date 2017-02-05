@@ -23,7 +23,8 @@ if is_chat_msg(msg) or is_super_group(msg) then
 	end
 	if settings.lock_link then
 		lock_link = settings.lock_link
-	else
+	
+			else
 		lock_link = 'no'
 	end
 	if settings.lock_member then
