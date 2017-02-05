@@ -289,13 +289,7 @@ return {
 	"^[#!/](markread) (off)$",
 	"^[#!/](setbotphoto)$",
 	"^[#!/](contactlist)$",
-	"^[#!/](dialoglist)$",
-	"^[#!/](delcontact) (%d+)$",
 	"^[#/!](reload)$",
-	"^[#/!](updateid)$",
-	"^[#/!](addlog)$",
-	"^[#/!](remlog)$",
-	"%[(photo)%]",
   },
   run = run,
   pre_process = pre_process
