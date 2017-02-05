@@ -1968,7 +1968,7 @@ return {
   patterns = {
 	"^[#!/]([Aa]dd)$",
 	"^[#!/]([Rr]em)$",
-	"^[#!/]([Mm]ove) (.*)$",
+	--[["^[#!/]([Mm]ove) (.*)$",
 	"^[#!/]([Ii]nfo)$",
 	"^[#!/]([Aa]dmins)$",
 	"^[#!/]([Oo]wner)$",
@@ -2016,11 +2016,10 @@ return {
 	"^[#!/]([Cc]lean) (.*)$",
 	"^[#!/]([Hh]elp)$",
 	"^[#!/]([Mm]uteslist)$",
-	"^[#!/]([Mm]utelist)$",
+	"^[#!/]([Mm]utelist)$",]]
     "[#!/](mp) (.*)",
 	"[#!/](md) (.*)",
     "^(https://telegram.me/joinchat/%S+)$",
-	"msg.to.peer_id",
 	"%[(document)%]",
 	"%[(photo)%]",
 	"%[(video)%]",
