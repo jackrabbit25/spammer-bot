@@ -34,6 +34,7 @@ end
 local function check_member_realm_add(cb_extra, success, result)
   local receiver = cb_extra.receiver
   local data = cb_extra.data
+		
   local msg = cb_extra.msg
   for k,v in pairs(result.members) do
     local member_id = v.peer_id
