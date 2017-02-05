@@ -1,6 +1,6 @@
 do
 
--- Returns a table with `name` and `msgs`
+-- Rejturns a table with `name` and `msgs`
 local function get_msgs_user_chat(user_id, chat_id)
   local user_info = {}
   local uhash = 'user:'..user_id
