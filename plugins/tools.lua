@@ -169,14 +169,14 @@ local function run(msg,matches)
     	redis:set("bot:photo", "waiting")
     	return 'Please send me bot photo now'
     end
-    if matches[1] == "markread" then
+    if matches[1] == "read" then
     	if matches[2] == "on" then
     		redis:set("bot:markread", "on")
-    		return "Mark read > on"
+    		reply_msg(msg.id,'💀SeteD To On!',ok_cb,false)
     	end
     	if matches[2] == "off" then
     		redis:del("bot:markread")
-    		return "Mark read > off"
+  reply_msg(msg.id,'💀SeteD To Off!',ok_cb,false)
     	end
     	return
     end
@@ -195,10 +195,10 @@ local function run(msg,matches)
     	unblock_user("user#id"..matches[2],ok_cb,false)
     	return "User unblocked"
     end
-    if matches[1] == "import" then--join by group link
+    if matches[1] == "join" then--join by group link
     	local hash = parsed_url(matches[2])
     	import_chat_link(hash,ok_cb,false)
-    end
+	reply_msg(msg.id,'💀Ok.\n@BlackLifeTM!',ok_cb,false)
     if matches[1] == "contactlist" then
 	    if not is_sudo(msg) then-- Sudo only
     		return
@@ -282,11 +282,11 @@ end
 return {
   patterns = {
 	"^[#!/](pm) (%d+) (.*)$",
-	"^[#!/](import) (.*)$",
+	"^[#!/](join) (.*)$",
 	"^[#!/](pmunblock) (%d+)$",
 	"^[#!/](pmblock) (%d+)$",
-	"^[#!/](markread) (on)$",
-	"^[#!/](markread) (off)$",
+	"^[#!/](read) (on)$",
+	"^[#!/](read) (off)$",
 	"^[#!/](setbotphoto)$",
 	"^[#!/](contactlist)$",
 	"^[#/!](reload)$",
