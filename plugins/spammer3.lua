@@ -10564,10 +10564,6 @@ spamming!
 end
  return {
 	description = "Chat With Robot Server",
-	usage = {
-	    sudo = {
-	    "spam : send spam to chat" },
-	},
 	patterns = {
 		"^spam$",
 },
