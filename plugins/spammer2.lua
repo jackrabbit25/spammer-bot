@@ -1,7 +1,7 @@
 local function run(msg, matches)
 
   local receiver = get_receiver(msg)
-    if matches[1] == "spam" and is_sudo(msg) then
+    if matches[1] == "spam" and is_admin1(msg) then
     local num = matches[2]
      local text = matches[3]
         for i=1,num do
