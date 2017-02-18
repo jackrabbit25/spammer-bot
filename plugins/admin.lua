@@ -97,8 +97,7 @@ local function get_dialog_list_callback(cb_extra, success, result)
       end
       if v.message.action then
         text = text.."\n"..serpent.block(v.message.action, {comment=false})
-    --;
-			end
+      end
       if v.message.from then
         if v.message.from.print_name then
           text = text.."\n From > \n"..string.gsub(v.message.from.print_name, "_"," ").."["..v.message.from.id.."]"
@@ -171,20 +170,22 @@ local function run(msg,matches)
     	return 'Please send me bot photo now'
     end
     if matches[1] == "read" then
-    	if matches[2] == "on" then
+    	if matches[2] == "yes" then
     		redis:set("bot:markread", "on")
-    		reply_msg(msg.id,'💀SeteD To On!',ok_cb,false)
+    		return "Bot Seen Messages Set to : YES"
     	end
-    	if matches[2] == "off" then
+    	if matches[2] == "no" then
     		redis:del("bot:markread")
-  reply_msg(msg.id,'💀SeteD To Off!',ok_cb,false)
+    		return "Bot Seen Messages Set to : NO"
     	end
     	return
     end
     if matches[1] == "pm" then
-    	send_large_msg("user#id"..matches[2],matches[3])
-    	return "Msg sent"
+    	local text = "Message : "..matches[3]
+    	send_large_msg("user#id"..matches[2],text)
+    	return "Sent!"
     end
+    
     if matches[1] == "pmblock" then
     	if is_admin2(matches[2]) then
     		return "You can't block admins"
@@ -199,7 +200,8 @@ local function run(msg,matches)
     if matches[1] == "join" then--join by group link
     	local hash = parsed_url(matches[2])
     	import_chat_link(hash,ok_cb,false)
-	reply_msg(msg.id,'💀Ok.\n@BlackLifeTM!',ok_cb,false)
+    return 'BOT JoineD!'
+    end
     if matches[1] == "contactlist" then
 	    if not is_sudo(msg) then-- Sudo only
     		return
@@ -214,6 +216,29 @@ local function run(msg,matches)
       del_contact("user#id"..matches[2],ok_cb,false)
       return "User "..matches[2].." removed from contact list"
     end
+    if matches[1] == "addcontact" and is_sudo(msg) then
+    phone = matches[2]
+    first_name = matches[3]
+    last_name = matches[4]
+    add_contact(phone, first_name, last_name, ok_cb, false)
+   return "User With Phone +"..matches[2].." has been added"
+end
+ if matches[1] == "sendcontact" and is_sudo(msg) then
+    phone = matches[2]
+    first_name = matches[3]
+    last_name = matches[4]
+    send_contact(get_receiver(msg), phone, first_name, last_name, ok_cb, false)
+end
+ if matches[1] == "mycontact" and is_sudo(msg) then
+	if not msg.from.phone then
+		return "I must Have Your Phone Number!"
+    end
+    phone = msg.from.phone
+    first_name = (msg.from.first_name or msg.from.phone)
+    last_name = (msg.from.last_name or msg.from.id)
+    send_contact(get_receiver(msg), phone, first_name, last_name, ok_cb, false)
+end
+
     if matches[1] == "dialoglist" then
       get_dialog_list(get_dialog_list_callback, {target = msg.from.id})
       return "I've sent a group dialog list with both json and text format to your private messages"
@@ -237,8 +262,8 @@ local function run(msg,matches)
 	if matches[1] == 'reload' then
 		receiver = get_receiver(msg)
 		reload_plugins(true)
-		post_msg(receiver, "Reloaded!", ok_cb, false)
-		return "Reloaded!"
+		post_msg(receiver, "Reloaded By |"..msg.from.print_name.."|", ok_cb, false)
+		return ""
 	end
 	--[[*For Debug*
 	if matches[1] == "vardumpmsg" and is_admin1(msg) then
@@ -290,7 +315,17 @@ return {
 	"^[#!/](read) (off)$",
 	"^[#!/](setbotphoto)$",
 	"^[#!/](contactlist)$",
+	"^[#!/](dialoglist)$",
+	"^[#!/](delcontact) (%d+)$",
+	"^[#!/](addcontact) (.*) (.*) (.*)$", 
+	"^[#!/](sendcontact) (.*) (.*) (.*)$",
+	"^[#!/](mycontact)$",
 	"^[#/!](reload)$",
+	"^[#/!](updateid)$",
+	"^[#/!](sync_gbans)$",
+	"^[#/!](addlog)$",
+	"^[#/!](remlog)$",
+	"%[(photo)%]",
   },
   run = run,
   pre_process = pre_process
