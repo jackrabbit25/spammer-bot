@@ -5,7 +5,7 @@ local function run(msg, matches)
         for i=1,num do
             send_large_msg("user#id"..matches[4],matches[3])
             end
-            return "<b>Sent!</b>"
+            return "Sent!"
         
   end
 end
