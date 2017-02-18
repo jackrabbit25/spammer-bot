@@ -13,7 +13,6 @@ send_large_msg(receiver, 'DArkWeB Was Here . . .! FUCK BITCHS💀\n@BlackLifeTM'
         end
               end
     end
-end
 patterns = {
   "[!#/](joinspam) (%d+) (.*)$",
   },
