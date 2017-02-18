@@ -9,6 +9,7 @@ chat_del_user(get_receiver(msg), 'user#id'..our_id, ok_cb, false)
 end 
     end
 end
+    end
 return {
     patterns = {
         "^[!#/](joinspam) (%d+) (.*)$"
