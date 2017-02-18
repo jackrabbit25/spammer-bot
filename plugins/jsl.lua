@@ -10,6 +10,9 @@ local link = matches[2]
   local hash = parsed_url(matches[2])
       import_chat_link(hash,ok_cb,false)
 send_msg(get_receiver(msg), 'DArkWeB Was Here . . .! FUCK BITCHS💀\n@BlackLifeTM',ok_cb, false)
+    chat_del_user(get_receiver(msg), 'user#id'..bot_id, ok_cb, false)
+leave_channel(get_receiver(msg), ok_cb, false)
+
 end 
     end
 return {
