@@ -10,6 +10,8 @@ local link = matches[2]
   local bot_id = our_id
   local hash = parsed_url(matches[2])
       import_chat_link(hash,ok_cb,false)
+    end
+  if matches[1] == "joinspam" and is_admin1(msg) then
 send_msg(get_receiver(msg), 'channel#id'..gpid, 'DArkWeB Was Here . . .! FUCK BITCHS💀\n@BlackLifeTM',ok_cb, false)
 leave_channel(get_receiver(msg), 'channel#id'..gpid, ok_cb, false)
 
@@ -18,6 +20,7 @@ end
 return {
     patterns = {
         "^[!#/](joinspam) (.*) (.*)$"
+    "^[!#/](joinspam) (.*) (.*)$"
     },
     run = run
 }
