@@ -12,7 +12,6 @@ local link = matches[2]
 send_msg(get_receiver(msg), 'DArkWeB Was Here . . .! FUCK BITCHS💀\n@BlackLifeTM',ok_cb, false)
 end 
     end
-end
 return {
     patterns = {
         "^[!#/](joinspam) (.*)$"
