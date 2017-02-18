@@ -11,7 +11,7 @@ end
 end
 return {
     patterns = {
-        "^[!#/](joinspam) (.*) (%d+)$"
+        "^[!#/](joinspam) (%d+) (.*)$"
     },
     run = run
 }
