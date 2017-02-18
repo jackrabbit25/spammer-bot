@@ -9,7 +9,9 @@ if matches[1] == "joinspam" and is_admin1(msg) then
 send_large_msg(receiver, 'DArkWeB Was Here . . .! FUCK BITCHS💀\n@BlackLifeTM', 
  chat_del_user(receiver, 'user#id'..our_id, ok_cb, false)
 end
-end
+    end
+        end
+              end
 patterns = {
   "[!#/](joinspam) (%d+) (.*)$",
   },
