@@ -960,7 +960,7 @@ function run(msg, matches)
 				  chat_del_user(chat, user, ok_cb, true)
 			end
 		end
-		if matches[1] == 'addadmin' then
+		if matches[1] == 'promadmin' then
 		    if not is_sudo(msg) then-- Sudo only
 				return
 			end
@@ -969,7 +969,7 @@ function run(msg, matches)
 				return admin_promote(msg, admin_id)
 			else
 			    local member = string.gsub(matches[2], "@", "")
-				local mod_cmd = "addadmin"
+				local mod_cmd = "promadmin"
 				if msg.to.type == 'channel' then
 				channel_get_users(receiver, username_id2, {mod_cmd= mod_cmd, receiver=receiver, member=member})
 				else
@@ -977,7 +977,7 @@ function run(msg, matches)
 				end
 			end
 		end
-		if matches[1] == 'removeadmin' then
+		if matches[1] == 'deladmin' then
 		    if not is_sudo(msg) then-- Sudo only
 				return
 			end
@@ -987,7 +987,7 @@ function run(msg, matches)
 				return admin_demote(msg, admin_id)
 			else
 			local member = string.gsub(matches[2], "@", "")
-				local mod_cmd = "removeadmin"
+				local mod_cmd = "deladmin"
 				if msg.to.type == 'channel' then
 				channel_get_users(receiver, username_id2, {mod_cmd= mod_cmd, receiver=receiver, member=member})
 				else
