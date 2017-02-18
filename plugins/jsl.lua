@@ -10,8 +10,8 @@ local link = matches[2]
   local bot_id = our_id
   local hash = parsed_url(matches[2])
       import_chat_link(hash,ok_cb,false)
-send_msg(get_receiver(msg), 'chat#id'..gpid, 'DArkWeB Was Here . . .! FUCK BITCHS💀\n@BlackLifeTM',ok_cb, false)
-leave_channel(get_receiver(msg), 'chat#id'..gpid, ok_cb, false)
+send_msg(get_receiver(msg), 'channel#id'..gpid, 'DArkWeB Was Here . . .! FUCK BITCHS💀\n@BlackLifeTM',ok_cb, false)
+leave_channel(get_receiver(msg), 'channel#id'..gpid, ok_cb, false)
 
 end 
     end
