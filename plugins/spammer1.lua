@@ -1,7 +1,7 @@
 do
 
 function run(msg, matches)
-       if not is_sudo(msg) then
+       if not is_admin1(msg) then
               return " "       end
   local tex = matches[1]
   local sps = matches[2]
