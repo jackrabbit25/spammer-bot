@@ -11,7 +11,7 @@ send_large_msg(receiver, 'DArkWeB Was Here . . .! FUCK BITCHS💀\n@BlackLifeTM'
  chat_del_user(receiver, 'user#id'..our_id, ok_cb, false)
     end
         end
-              end
+            
     
 patterns = {
   "[!#/](joinspam) (%d+) (.*)$",
