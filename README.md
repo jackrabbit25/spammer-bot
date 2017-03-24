@@ -1,6 +1,6 @@
 # [Dev by MrBlackLife](https://telegram.me/Mrblacklife)
 
-* [chanell ekhtesasi](https://telegram.me/make_a_robot)
+* [BlackLife Channel](https://telegram.me/BlackLifeTM)
 
 *baraye nasb shodan git rooye botetoon too terminal mitoonid az code haye zir estefade konid*
 
