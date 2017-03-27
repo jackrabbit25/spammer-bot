@@ -11,5 +11,5 @@ end
  "^[!/#](setecho) (.*)$",
  "^(.*)$",
  },
- run = run,
+ run = run
  }
