@@ -170,13 +170,13 @@ local function run(msg,matches)
     	return 'Please send me bot photo now'
     end
     if matches[1] == "read" then
-    	if matches[2] == "yes" then
+    	if matches[2] == "on" then
     		redis:set("bot:markread", "on")
-    		return "Bot Seen Messages Set to : YES"
+    		return "Bot Seen Messages Set to : On"
     	end
-    	if matches[2] == "no" then
+    	if matches[2] == "off" then
     		redis:del("bot:markread")
-    		return "Bot Seen Messages Set to : NO"
+    		return "Bot Seen Messages Set to : Off"
     	end
     	return
     end
