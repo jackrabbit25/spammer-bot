@@ -15,6 +15,8 @@ cd spammer-bot
 ./spammer.sh
 ```
 * For AutoLaunch|AntiCrash : 
+** First goto AutoLaunch/config.py And Write Your Server User Name (Location Bot Run in Your Server)
+* Next :
 ```
 cd AutoLaunch 
 python3 anticrash.py start
