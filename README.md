@@ -9,9 +9,22 @@ sudo pip3 install termcolor
 sudo pip3 install psutil
 sudo apt-get install python3.5
 sudo apt-get install python3-pip
+git clone https://github.com/3pehrdev/spammer-bot
+cd spammer-bot
 ./spammer.sh install
 ./spammer.sh
 ```
+* For AutoLaunch|AntiCrash : 
+```
+cd AutoLaunch 
+python3 anticrash.py start
+```
+* And For Stop :
+```
+cd AutoLaunch 
+python3 anticrash.py stop
+```
+--------------------------
 Join Channel : [BlackLifeTeaM](https://t.me/BlackLifeTM)
 * Developed By [MrBlackLife](https://t.me/MrBlackLife)
 # Special Thanks To 
