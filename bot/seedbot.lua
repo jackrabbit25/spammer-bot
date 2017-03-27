@@ -51,13 +51,13 @@ function on_binlog_replay_end()
 end
 
 function msg_valid(msg)
-  -- Don't process outgoing messages
+
   if msg.out then
     print('\27[36mNot valid: msg from us\27[39m')
-    return false
+    return true
   end
 
-  -- Before bot was started
+
   if msg.date < os.time() - 5 then
     print('\27[36mNot valid: old msg\27[39m')
     return false
@@ -80,7 +80,7 @@ function msg_valid(msg)
 
   if msg.from.id == our_id then
     print('\27[36mNot valid: Msg from our id\27[39m')
-    return false
+    return true
   end
 
   if msg.to.type == 'encr_chat' then
@@ -89,7 +89,6 @@ function msg_valid(msg)
   end
 
   if msg.from.id == 777000 then
-    --send_large_msg(*group id*, msg.text) *login code will be sent to GroupID*
     return false
   end
 
