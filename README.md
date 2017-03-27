@@ -15,9 +15,9 @@ sudo apt-get install python3-pip
 Join Channel : [BlackLifeTeaM](https://t.me/BlackLifeTM)
 * Developed By [MrBlackLife](https://t.me/MrBlackLife)
 # Special Thanks To 
-** ------------------------
-BlackLifeTeaM Member's
-Dragon Born
-And TeleSeedTeaM Member's
+ ------------------------
+*BlackLifeTeaM Member's
+*Dragon Born
+*And TeleSeedTeaM Member's
 ---------------------------
-GOOD LUCK!**
+GOOD LUCK!
