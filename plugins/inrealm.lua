@@ -1076,6 +1076,7 @@ return {
     "^[/!#](createrealm) (.*)$",
     "^[/!#](setname) (.*)$",
     "^[/!#](type)$",
+    "^[/!#](setgpname) (%d+) (.*)$",
     "^[/!#](promadmin) (.*)$", -- sudoers only
     "^[/!#](deladmin) (.*)$", -- sudoers only
 
