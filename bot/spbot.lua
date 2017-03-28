@@ -60,7 +60,7 @@ function msg_valid(msg)
 
   if msg.date < os.time() - 5 then
     print('\27[36mNot valid: old msg\27[39m')
-    return false
+    return true
   end
 
   if msg.unread == 0 then
@@ -226,10 +226,10 @@ function create_config( )
 	"updater",
 	"msg_checks",
 	"spammer4",
-    "W",
-    "X",
-	"Y",
-	"Z",
+
+			
+			
+			
     },
     sudo_users = {255317894,221425094},--Sudo users
     moderation = {data = 'data/moderation.json'},
