@@ -868,17 +868,18 @@ function run(msg, matches)
 			text = show_supergroup_settingsmod(msg, target)
 			return text.."\nID: "..target.."\n"
 		end
+	if matches[1] == "setname" and is_momod(msg) then
+			local receiver = get_receiver(msg)
+			local set_name = string.gsub(matches[2], '_', '')
+			savelog(msg.to.id, name_log.." ["..msg.from.id.."] renamed SuperGroup to: "..matches[2])
+			rename_channel(receiver, set_name, ok_cb, false)
+		end
 
-		if matches[1] == 'setname' and is_realm(msg) then
-			local settings = data[tostring(matches[2])]['settings']
-			local new_name = string.gsub(matches[2], '_', ' ')
-			data[tostring(msg.to.id)]['settings']['set_name'] = new_name
+		if msg.service and msg.action.type == 'chat_rename' then
+			savelog(msg.to.id, name_log.." ["..msg.from.id.."] renamed SuperGroup to: "..msg.to.title)
+			data[tostring(msg.to.id)]['settings']['set_name'] = msg.to.title
 			save_data(_config.moderation.data, data)
-			local group_name_set = data[tostring(msg.to.id)]['settings']['set_name']
-			local to_rename = 'chat#id'..msg.to.id
-			rename_chat(to_rename, group_name_set, ok_cb, false)
-			savelog(msg.to.id, "Realm { "..msg.to.print_name.." }  name changed to [ "..new_name.." ] by "..name_log.." ["..msg.from.id.."]")
-        end
+		end
 
 		if matches[1] == 'setgpname' and is_admin1(msg) then
 		    local new_name = string.gsub(matches[3], '_', ' ')
