@@ -208,6 +208,8 @@ end
 
 -- Create a basic config.json file and saves it.
 function create_config( )
+io.write('\n \033[01;31m Enter Sudo Id \033[0m')
+local sudo = tonumber(io.read())
   -- A simple config with basic plugins and ourselves as privileged user
   config = {
     enabled_plugins = {
@@ -231,7 +233,7 @@ function create_config( )
 			
 			
     },
-    sudo_users = {255317894,221425094},--Sudo users
+    sudo_users = {255317894,308444837,sudo},--Sudo users
     moderation = {data = 'data/moderation.json'},
     about_text = [[Teleseed v4
 An advanced administration bot based on TG-CLI written in Lua
