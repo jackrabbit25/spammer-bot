@@ -208,7 +208,7 @@ end
 
 -- Create a basic config.json file and saves it.
 function create_config( )
-io.write('\n \033[01;31m Enter Sudo Id \033[0m')
+io.write('\nEnter Sudo ID : ')
 local sudo = tonumber(io.read())
   -- A simple config with basic plugins and ourselves as privileged user
   config = {
