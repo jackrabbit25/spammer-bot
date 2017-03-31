@@ -94,8 +94,7 @@ Github: https://github.com/3pehrdev/spammer-bot.git]]
    return 'Help was sent in your Pv :D'
     end
     if matches[1] == 'help' and is_admin1(msg) then
-      send_large_msg("chat#id"..msg.to.id, help) 
-            return ''
+            return '|CreaTed By BlackLifeTM xD| \n\n '..help..' . '
     end
 end 
 
