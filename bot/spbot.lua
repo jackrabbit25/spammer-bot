@@ -216,7 +216,7 @@ local sudo = tonumber(io.read())
 	"tools",
     "leave",
     "inrealm",
-    "ingroup",
+    "help",
     "plugins",
     "spammer1",
     "spammer2",
