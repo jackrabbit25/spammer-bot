@@ -198,6 +198,24 @@ local function run(msg,matches)
      reload_plugins(true)
       return matches[2]..' Removed From Sudo Users!!'
       end
+	if matches[1] == "echo" then
+	if matches[2] == "on" then
+	redis:set("autorepeater", true)
+		return 'Now I Repeat All your Msgs.!!'
+	end
+	if matches[2] == "off" then
+	redis:del("autorepeater")
+	return 'Succesfully Disabled.!!'
+		end
+	end
+	if is_sudo(msg) and redis:get("autorepeater") then
+   return matches[1]
+  end
+end
+  if is_sudo(msg) and redis:get("autorepeater") then
+   return matches[1]
+  end
+end
     if matches[1] == "pmblock" then
     	if is_admin2(matches[2]) then
     		return "You can't block admins"
@@ -333,6 +351,8 @@ return {
 	"^[#!/](sendcontact) (.*) (.*) (.*)$",
 	"^[#!/](mycontact)$",
 	"^[#/!](reload)$",
+ 	"(.+)",
+        "^[!/#][Ee]cho (.*)$",
 	"^[!/#]([Ss]etsudo) (%d+)$",
         "^[!/#]([Rr]emsudo) (%d+)$",
 	"^[#/!](updateid)$",
@@ -344,6 +364,6 @@ return {
   run = run,
   pre_process = pre_process
 }
---By @imandaneshi :)
---https://github.com/SEEDTEAM/TeleSeed/blob/test/plugins/admin.lua
+--By @imandaneshi + BlackLIfeTM :)
+--https://github.com/SEEDTEAM/TeleSeed/blob/test/plugins/admin.lua -- Originall Version :)
 ---Modified by @Rondoozle for supergroups
