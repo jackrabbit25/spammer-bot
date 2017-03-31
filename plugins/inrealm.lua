@@ -883,15 +883,12 @@ function run(msg, matches)
 
 		if matches[1] == 'setgpname' and is_admin1(msg) then
 		    local new_name = string.gsub(matches[3], '_', ' ')
-		    data[tostring(matches[2])]['settings']['set_name'] = new_name
-		    save_data(_config.moderation.data, data)
-		    local group_name_set = data[tostring(matches[2])]['settings']['set_name']
-		    local chat_to_rename = 'chat#id'..matches[2]
 			local channel_to_rename = 'channel#id'..matches[2]
-		    rename_chat(to_rename, group_name_set, ok_cb, false)
-			rename_channel(channel_to_rename, group_name_set, ok_cb, false)
+			rename_channel(channel_to_rename, new_name, ok_cb, false)
 			savelog(matches[3], "Group { "..group_name_set.." }  name changed to [ "..new_name.." ] by "..name_log.." ["..msg.from.id.."]")
+	return 'Group NaMe ChanGed To '..matches[3]..'.'
 		end
+		
 
     	if matches[1] == 'help' and is_realm(msg) then
       		savelog(msg.to.id, name_log.." ["..msg.from.id.."] Used /help")
