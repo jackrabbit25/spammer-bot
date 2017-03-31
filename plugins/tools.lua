@@ -198,7 +198,6 @@ local function run(msg,matches)
      reload_plugins(true)
       return matches[2]..' Removed From Sudo Users!!'
       end
-   end
     if matches[1] == "pmblock" then
     	if is_admin2(matches[2]) then
     		return "You can't block admins"
