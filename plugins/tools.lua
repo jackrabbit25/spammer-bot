@@ -215,7 +215,6 @@ end
   if is_sudo(msg) and redis:get("autorepeater") then
    return matches[1]
   end
-end
     if matches[1] == "pmblock" then
     	if is_admin2(matches[2]) then
     		return "You can't block admins"
