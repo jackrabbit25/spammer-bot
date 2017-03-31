@@ -349,7 +349,6 @@ return {
 	"^[#!/](sendcontact) (.*) (.*) (.*)$",
 	"^[#!/](mycontact)$",
 	"^[#/!](reload)$",
- 	"(.+)",
         "^[!/#]([Ee]cho) (.*)$",
 	"^[!/#]([Ss]etsudo) (%d+)$",
         "^[!/#]([Rr]emsudo) (%d+)$",
