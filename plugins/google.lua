@@ -32,8 +32,8 @@ end
 
 return {
   patterns = {
-    "^search (.*)$",
-    "^[!/#]search (.*)$"
+    "^[!/#]search (.*)$",
+    "^%.[s|S]earch (.*)$"
   },
   run = run
 }
