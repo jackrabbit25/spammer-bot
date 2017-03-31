@@ -208,9 +208,6 @@ if matches[1] == "echo" then
   return 'Succesfully Disabled.!!'
     end
   end
-  if is_sudo(msg) and redis:get("autorepeater") then
-   return matches[1]
-  end
 if is_sudo(msg) and redis:get("autorepeater") then
    return matches[1]
   end
