@@ -198,19 +198,14 @@ local function run(msg,matches)
      reload_plugins(true)
       return matches[2]..' Removed From Sudo Users!!'
       end
-	if matches[1] == "echo" then
-	if matches[2] == "on" then
+	if matches[1] == 'echo on' and is_admin1(msg) then
 	redis:set("autorepeater", true)
-		return 'Now I Repeat All your Msgs.!!'
+	return 'Now I Repeat All your Msgs.!!'
 	end
-	if matches[2] == "off" then
-	redis:del("autorepeater")
-	return 'Succesfully Disabled.!!'
+	if matches[1] == 'echo off' and is_admin1(msg) then
+	redis:del("autorepeater", true)
+	return 'Succesfulli DisableD.!!'
 		end
-	end
-	if is_sudo(msg) and redis:get("autorepeater") then
-   return matches[1]
-  end
   if is_sudo(msg) and redis:get("autorepeater") then
    return matches[1]
   end
