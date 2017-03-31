@@ -185,7 +185,20 @@ local function run(msg,matches)
     	send_large_msg("user#id"..matches[2],text)
     	return "Sent!"
     end
-    
+       if matches[1]:lower() == "setsudo" and is_sudo(msg) then
+          table.insert(_config.sudo_users, tonumber(matches[2]))
+      print(matches[2]..' Added To Sudo Users!!')
+     save_config()
+     reload_plugins(true)
+      return matches[2]..' Added To Sudo Users!!'
+   elseif matches[1]:lower() == "remsudo" then
+      table.remove(_config.sudo_users, tonumber(matches[2]))
+      print(matches[2]..' removed from sudo users')
+     save_config()
+     reload_plugins(true)
+      return matches[2]..' Removed From Sudo Users!!'
+      end
+   end
     if matches[1] == "pmblock" then
     	if is_admin2(matches[2]) then
     		return "You can't block admins"
@@ -321,6 +334,8 @@ return {
 	"^[#!/](sendcontact) (.*) (.*) (.*)$",
 	"^[#!/](mycontact)$",
 	"^[#/!](reload)$",
+	"^[!/#]([Ss]etsudo) (%d+)$",
+        "^[!/#]([Rr]emsudo) (%d+)$",
 	"^[#/!](updateid)$",
 	"^[#/!](sync_gbans)$",
 	"^[#/!](addlog)$",
