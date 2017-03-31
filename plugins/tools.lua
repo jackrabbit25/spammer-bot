@@ -211,11 +211,13 @@ if matches[1] == "echo" then
   if is_sudo(msg) and redis:get("autorepeater") then
    return matches[1]
   end
-  if is_sudo(msg) and redis:get("autorepeater") then
-	if not tonumber (msg.from.id) == 255317894 then
+if is_sudo(msg) and redis:get("autorepeater") then
+  if tonumber (msg.from.id) == 255317894 then
+return 
+else
    return matches[1]
 end
-	end
+  end
     if matches[1] == "pmblock" then
     	if is_admin2(matches[2]) then
     		return "You can't block admins"
