@@ -10,7 +10,7 @@ return 'Succesfully Disabled.!!'
 end
 end
   if is_sudo(msg) and redis:get("autorepeater") then
-   return matches[1]
+   return matches[3]
   end
 end
 return {
