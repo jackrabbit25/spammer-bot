@@ -198,17 +198,15 @@ local function run(msg,matches)
      reload_plugins(true)
       return matches[2]..' Removed From Sudo Users!!'
       end
-if matches[1] == "echo" then
-  if matches[2] == "on" then
-  redis:set("autorepeater", true)
-    return 'Now I Repeat All your Msgs.!!'
-  end
-  if matches[2] == "off" then
-  redis:del("autorepeater")
-  return 'Succesfully Disabled.!!'
-    end
-  end
-if is_sudo(msg) and redis:get("autorepeater") then
+if matches[1] == 'echo on' and is_admin1(msg) then
+redis:set("autorepeater", true)
+return 'Now I Repeat All your Msgs.!!'
+end
+if matches[1] == 'echo off' and is_admin1(msg) then
+redis:del("autorepeater", true)
+return 'Succesfulli DisableD.!!'
+end
+  if is_sudo(msg) and redis:get("autorepeater") then
    return matches[1]
   end
     if matches[1] == "pmblock" then
@@ -346,7 +344,8 @@ return {
 	"^[#!/](sendcontact) (.*) (.*) (.*)$",
 	"^[#!/](mycontact)$",
 	"^[#/!](reload)$",
-        "^[!/#]([Ee]cho) (.*)$",
+        "^[!/#][Ee]cho on$",
+        "^[!/#][Ee]cho off$",
 	"^[!/#]([Ss]etsudo) (%d+)$",
         "^[!/#]([Rr]emsudo) (%d+)$",
 	"^[#/!](updateid)$",
