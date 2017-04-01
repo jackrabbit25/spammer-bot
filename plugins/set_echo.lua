@@ -15,7 +15,6 @@ end
 end
 return {
   patterns = {
-    "(.+)",
     "^[!/#][Ee]cho (.*)$",
   }, 
   run = run 
