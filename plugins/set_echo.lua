@@ -13,7 +13,6 @@ end
 end
 return {
   patterns = {
-    "(.+)",
     "^[!/#][Ee]cho on$",
     "^[!/#][Ee]cho off$",
   }, 
