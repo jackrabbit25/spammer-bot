@@ -9,6 +9,7 @@ local function run(msg, matches)
   return 'Succesfully Disabled.!!'
     end
   end
+  end
   return {
   patterns = {
      "^[!/#]([Ee]cho) (.*)$",
