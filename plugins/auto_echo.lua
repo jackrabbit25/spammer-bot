@@ -4,6 +4,7 @@ local function run(msg, matches)
    return matches[1]
   end
 end
+  end
 return {
   patterns = {
     "^(.+)$",
