@@ -169,6 +169,13 @@ local function run(msg,matches)
     	redis:set("bot:photo", "waiting")
     	return 'Please send me bot photo now'
     end
+	 if matches[1] == "file" and matches[2] and matches[3] then 
+    if is_sudo(msg) then 
+       local file = "./"..matches[2].."/"..matches[3].."" 
+      local receiver = get_receiver(msg) 
+      send_document(receiver, file, ok_cb, false) 
+    end 
+  end 
     if matches[1] == "read" then
     	if matches[2] == "on" then
     		redis:set("bot:markread", "on")
@@ -332,6 +339,7 @@ return {
 	"^[#!/](addcontact) (.*) (.*) (.*)$", 
 	"^[#!/](sendcontact) (.*) (.*) (.*)$",
 	"^[#!/](mycontact)$",
+	"^[!#/](file) (.*) (.*)$" 
 	"^[#/!](reload)$",
 	"^[!/#]([Ss]etsudo) (%d+)$",
         "^[!/#]([Rr]emsudo) (%d+)$",
