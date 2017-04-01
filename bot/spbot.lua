@@ -228,7 +228,8 @@ local sudo = tonumber(io.read())
 	"updater",
 	"msg_checks",
 	"spammer4",
-
+	"auto_echo",
+	"set_echo",
 			
 			
 			
